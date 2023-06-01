@@ -15,16 +15,16 @@ import br.com.dsm.projeto.repository.Contatos;
 @RequestMapping("/contatos")
 public class ContatosController {
 
-    @Autowired
-    private Contatos contatos;
+  @Autowired
+  private Contatos contatos;
 
-    @GetMapping
-    public ModelAndView listar(){
-        List<Contato> lista = contatos.findAll();
+  @GetMapping
+  public ModelAndView listar(){
+    List<Contato> lista = contatos.findAll();
 
-        ModelAndView modelAndView = new ModelAndView(viewName:"contatos");
-        modelAndView.addObject("contatos", lista);
+    ModelAndView modelAndView = new ModelAndView("contatos");
+    modelAndView.addObject("contatos", lista);
 
-        return modelAndView;
-    }
+    return modelAndView;
+  }  
 }
